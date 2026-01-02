@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        /*1*/
+/* Search Bar */
+        .search-box {
+      background: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      color: white;
+      width: 100%;
+    }
+
+    .search-box input::placeholder {
+      color: white;
+    }
+
+        /* Navbar links */
+        .menu-links a {
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 18px;
+            color: black;
+        }
+
+        .menu-links a:hover {
+            color: #4CAF50;
+        }
+        /*2*/
+/* Background Image */
+    .hero-section {
+        background: url(Supermarket\ Finds_\ A\ Cart\ Full\ of\ Fresh\ Choices\ \ Stock\ Photo\ _\ Adobe\ Stock\ 1.png)center/cover no-repeat;
+        height: 500px;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 55px;
+        font-weight: bold;
+    }
+
+    .hero-content h2 {
+        font-size: 40px;
+        margin-top: -10px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+        max-width: 650px;
+    }
+
+    .btn-shop {
+        background: #4CAF50;
+        color: white;
+        font-size: 18px;
+        padding: 10px 25px;
+        border-radius: 10px;
+    }
+
+    .avatar-group img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 3px solid white;
+        margin-right: -15px;
+        object-fit: cover;
+    }
+
+    .rating-box {
+        padding: 20px 40px;
+        background: #fff;
+    }
+
+    @media(max-width: 768px){
+        .hero-section {
+            height: auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .hero-content h1 { font-size: 38px; }
+        .hero-content h2 { font-size: 28px; }
+        .hero-content p { margin: 0 auto; }
+    }
+    /*3*/
+.choose-card {
+        background: #f8f8f8;
+        border-radius: 20px;
+        padding: 30px 20px;
+        text-align: center;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        gap: 34px;
+    }
+
+    .choose-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .choose-card img {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #eee;
+    }
+
+    h2 {
+        color: #e5a000;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    /*4*/
+.category-title {
+  font-weight: 600;
+  color: #dca10d;   /* golden orange */
+}
+
+.circle-box {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+/*5*/
+.deals-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #dca10d;  /* golden orange */
+}
+/*6*/
+.deal-card {
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.deal-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.deal-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.shop-btn {
+  background-color: #28a745;   /* green */
+  color: white;
+  padding: 12px 40px;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.shop-btn:hover {
+  background-color: #218838;
+}
+/*7*/
+.featured-title {
+    font-weight: 600;
+    color: #dca10d;
+}
+
+.product-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.img-box {
+    position: relative;
+}
+
+.prod-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #c6e44d;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff;
+    padding: 6px 8px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: #28a745;
+}
+
+.prod-details {
+    padding: 15px 15px 20px;
+}
+
+.prod-category {
+    color: green;
+    font-weight: 600;
+    margin: 0;
+}
+
+.rating {
+    float: right;
+    margin-top: -20px;
+    font-weight: bold;
+}
+
+.star {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.prod-name {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.prod-weight {
+    color: grey;
+    font-size: 0.9rem;
+}
+
+.prod-price {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.add-btn {
+    width: 110px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-weight: 600;
+    background: #ffffff;
+}
+.add-btn i {
+    color: #ff0d53;
+    font-size: 1.2rem;
+}
+/*8*/
+.faq-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq-item {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px 25px;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.arrow {
+    transition: 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+/*9*/
+.footer-section {
+  background: #f39c12;
+  color: #000;
+  padding-top: 30px;
+}
+
+.footer-img {
+  width: 140px;
+  border-radius: 10px;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.icon-box i {
+  color: #000;
+}
+
+.footer-bottom {
+  background: #00000022;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<nav class="navbar navbar-expand-lg bg-white py-3">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" height="100">
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTop">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible -->
+        <div class="collapse navbar-collapse" id="navTop">
+
+           <!-- Search Box -->
+    <div class="search-box mx-3 d-none d-md-flex">
+      <input type="text" placeholder="Search product category">
+      <i class="bi bi-search text-white fs-5"></i>
+    </div>
+
+            <!-- Register Button -->
+            <div class="text-center ms-lg-3">
+                <a class="btn btn-success px-4 py-2" href="#">Register</a>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+<!-- SECOND MENU -->
+<div class="bg-white py-2">
+    <div class="container d-flex justify-content-center menu-links flex-wrap">
+        <a href="Home.html">Home</a>
+        <a href="Shopping.html">Shopping</a>
+        <a href="Categories.html">Categories</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Contact us.html">Contact us</a>
+        <a href="About us.html">About us</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstraap.bundle.min.js"></script>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="hero-content">
+        <h1>Explore Fresh & Healthy</h1>
+        <h2>Convenience and Trust your way</h2>
+        <p>Your trusted online grocery store for quick, easy, and reliable shopping—freshness delivered within hours.</p>
+
+        <!-- Buttons -->
+        <div class="mt-4">
+            <a href="#" class="btn btn-shop">Shop now →</a>
+            <a href="#" class="ms-3 text-warning fw-bold">Enquiry Furniture</a>
+        </div>
+    </div>
+</section>
+
+<!-- RATING SECTION -->
+<div class="rating-box d-flex align-items-center justify-content-between flex-wrap">
+    
+    <!-- Avatar Group -->
+    <div class="avatar-group d-flex align-items-center">
+        <img src="https://i.pravatar.cc/100?img=11">
+        <img src="https://i.pravatar.cc/100?img=12">
+        <img src="https://i.pravatar.cc/100?img=13">
+        <img src="https://i.pravatar.cc/100?img=14">
+        <button class="btn btn-warning rounded-circle ms-2">+</button>
+    </div>
+
+    <!-- Rating Text -->
+    <div class="ms-3">
+        <h5 class="m-0">4.9k Ratings+</h5>
+        <small class="text-muted">Trusted by 50k customers</small>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="container py-5">
+    
+    <!-- Title -->
+    <h2 class="text-center">Why Choose Us!</h2>
+
+    <!-- Card Row -->
+    <div class="row text-center justify-content-center g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-4 col-lg-2">
+            <div class="choose-card">
+                <img src="ChatGPT Image Aug 18, 2025, 01_07_22 PM 1.png" alt="">
+                <p class="mt-3 fw-semibold">Fresh & Handpicked</p>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 col-lg-2">
+            <div class="choose-card">
+                <img src="Man traveler walking in the city carry a suitcase… 1.png" alt="">
+                <p class="mt-3 fw-semibold">Fast & Reliable Delivery</p>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 col-lg-2">
+            <div class="choose-card">
+                <img src="Illustration_isometric_concept__Safety_of_online_-removebg-preview (1) 2.png" alt="">
+                <p class="mt-3 fw-semibold">Affordable Prices</p>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4 col-lg-2">
+            <div class="choose-card">
+                <img src="58e00aaf-9d42-4a7f-a520-1d56226a063a-removebg-preview 1.png" alt="">
+                <p class="mt-3 fw-semibold">Wide Variety</p>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4 col-lg-2">
+            <div class="choose-card">
+                <img src="f7e828a3-1c78-4191-8c06-7fdc3a19940b-removebg-preview 1.png" alt="">
+                <p class="mt-3 fw-semibold">Quality & Trust</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="py-5">
+  <div class="container text-center">
+
+    <h2 class="mb-5 category-title">Categories</h2>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Category Item -->
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="circle-box">
+          <img src="Group 30670.png" class="img-fluid category-img" alt="Vegetables">
+        </div>
+        <p class="mt-2 category-text">Vegetables</p>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="circle-box">
+          <img src="Group 30671.png" class="img-fluid category-img" alt="Fresh fruits">
+        </div>
+        <p class="mt-2 category-text">Fresh fruits</p>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="circle-box">
+          <img src="Group 30672.png" class="img-fluid category-img" alt="Milk & Egg">
+        </div>
+        <p class="mt-2 category-text">Milk & Egg</p>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="circle-box">
+          <img src="Group 30673.png" class="img-fluid category-img" alt="Dry fruits">
+        </div>
+        <p class="mt-2 category-text">Dry fruits</p>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <div class="circle-box">
+          <img src="Group 30674.png" class="img-fluid category-img" alt="Household">
+        </div>
+        <p class="mt-2 category-text">House hold</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="py-4">
+  <div class="container text-center">
+      <h2 class="deals-title">Deals flat 25% off</h2>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="row justify-content-center g-5">
+
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 text-center">
+        <div class="deal-card">
+          <img src="istockphoto-1015771620-612x612.png" class="img-fluid deal-img" alt="Vegetables">
+        </div>
+
+        <p class="deal-text mt-3">Fresh vegetables have 25% OFF</p>
+
+        <button class="btn shop-btn mt-3">Shop now</button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 text-center">
+        <div class="deal-card">
+          <img src="istockphoto-1015771620-612x612-1.png" class="img-fluid deal-img" alt="Fruits">
+        </div>
+
+        <p class="deal-text mt-3">Fresh fruits have 25% OFF</p>
+
+        <button class="btn shop-btn mt-3">Shop now</button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+
+        <h2 class="text-center featured-title mb-5">Featured products</h2>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Product Card 1 -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="product-card">
+
+                    <div class="img-box">
+                        <span class="badge-discount">20%<br>off</span>
+                        <span class="wishlist"><i class="bi bi-heart"></i></span>
+                        <img src="istockphoto-177385867-612x612-removebg-preview.png" class="img-fluid prod-img" alt="strawberry">
+                    </div>
+
+                    <div class="prod-details">
+                        <p class="prod-category">Fruits</p>
+
+                        <p class="rating">
+                            <span class="star">★</span> 4.5
+                        </p>
+
+                        <p class="prod-name">Fresh Strawberry</p>
+                        <p class="prod-weight">500g</p>
+
+                        <p class="prod-price">$56</p>
+
+                        <button class="btn add-btn">Add <i class="bi bi-cart3"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="product-card">
+
+                    <div class="img-box">
+                        <span class="badge-discount">20%<br>off</span>
+                        <span class="wishlist"><i class="bi bi-heart"></i></span>
+                        <img src="istockphoto-177385867-612x612-removebg-preview-1.png" class="img-fluid prod-img" alt="combo">
+                    </div>
+
+                    <div class="prod-details">
+                        <p class="prod-category">Vegetables</p>
+
+                        <p class="rating">
+                            <span class="star">★</span> 4.5
+                        </p>
+
+                        <p class="prod-name">Fresh combo</p>
+                        <p class="prod-weight">500g</p>
+
+                        <p class="prod-price">$56</p>
+
+                        <button class="btn add-btn">Add <i class="bi bi-cart3"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="product-card">
+
+                    <div class="img-box">
+                        <span class="badge-discount">20%<br>off</span>
+                        <span class="wishlist"><i class="bi bi-heart"></i></span>
+                        <img src="istockphoto-177385867-612x612-removebg-preview-2.png" class="img-fluid prod-img" alt="lemon">
+                    </div>
+
+                    <div class="prod-details">
+                        <p class="prod-category">Fruits</p>
+
+                        <p class="rating">
+                            <span class="star">★</span> 4.5
+                        </p>
+
+                        <p class="prod-name">Fresh lemon</p>
+                        <p class="prod-weight">500g</p>
+
+                        <p class="prod-price">$56</p>
+
+                        <button class="btn add-btn">Add <i class="bi bi-cart3"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="faq-wrapper">
+
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    1.) Do you offer free delivery?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Yes, we offer free standard delivery on all orders above ₹5,000. 
+                        Express and scheduled delivery options are also available at checkout.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    2.) How long will it take to receive my order?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Delivery times vary based on your location and product availability. 
+                        Most orders are delivered within 5–10 business days. 
+                        Custom-made items may take longer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    3.) Can I return or exchange grocery after purchase?
+                    <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Yes, you can return eligible items within 7 days of delivery. 
+                        Items must be unused and in original condition. 
+                        Please check our <a href="#">Return Policy</a> for details.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+const faqs = document.querySelectorAll(".faq-item");
+
+faqs.forEach(faq => {
+    const question = faq.querySelector(".faq-question");
+    const answer = faq.querySelector(".faq-answer");
+    const arrow = faq.querySelector(".arrow");
+
+    question.addEventListener("click", () => {
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+        arrow.classList.toggle("rotate");
+    });
+});
+</script>
+
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<footer class="footer-section">
+  <div class="container-fluid p-4">
+    <div class="row align-items-start">
+
+      <!-- Left image -->
+      <div class="col-md-2 text-center">
+        <img src="1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" class="footer-img" alt="lady shopping">
+      </div>
+
+      <!-- Logo + Social icons -->
+      <div class="col-md-3">
+        <img src="f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" class="mb-3" width="130">
+
+        <h5 class="mb-2">Follow Us On :</h5>
+
+        <div class="d-flex gap-3">
+          <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+          <div class="icon-box"><i class="fab fa-instagram"></i></div>
+          <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="col-md-2">
+        <h6 class="footer-title">company</h6>
+        <p>About us</p>
+        <p>Blog</p>
+        <p>Contact us</p>
+        <p>Career</p>
+      </div>
+
+      <!-- Customer service -->
+      <div class="col-md-2">
+        <h6 class="footer-title">Customer service</h6>
+        <p>My Account</p>
+        <p>Track your order</p>
+        <p>Return</p>
+        <p>FAQ</p>
+      </div>
+
+      <!-- Info -->
+      <div class="col-md-2">
+        <h6 class="footer-title">Our information</h6>
+        <p>Privacy</p>
+        <p>User terms & Conditions</p>
+        <p>Return Policy</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-1">
+        <h6 class="footer-title">Contact info</h6>
+        <p>123-456-789</p>
+        <p>example@gmail.com</p>
+        <p>72, north street</p>
+        <p>Mumbai-001</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center py-2">
+    © 2025 My market. All rights reserved.<br>
+    <a href="#">Terms & Conditions</a> | 
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

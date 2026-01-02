@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+     /*1*/
+.search-box {
+      background: #4CAF50;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .search-box input {
+      border: none;
+      background: transparent;
+      color: white;
+      width: 100%;
+    }
+
+    .search-box input::placeholder {
+      color: white;
+    }
+
+    .icon-btn {
+      font-size: 22px;
+      margin-left: 18px;
+      cursor: pointer;
+    }
+
+    .menu-area a {
+      margin: 0 18px;
+      color: black;
+      text-decoration: none;
+      font-size: 17px;
+    }
+        /*2*/
+.card-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+.card-custom:hover {
+    transform: scale(1.02);
+}
+.discount-badge {
+    position: absolute;
+    background: #ccff66;
+    padding: 6px 10px;
+    top: 10px;
+    left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    color: #1e8f3a;
+    cursor: pointer;
+}
+.btn-add {
+    border-radius: 20px;
+    border: 1px solid #c33;
+    padding: 6px 18px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.star-rating {
+    color: #f0c400;
+    font-size: 18px;
+}
+/*3*/
+.card-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+.card-custom:hover {
+    transform: scale(1.02);
+}
+.discount-badge {
+    position: absolute;
+    background: #ccff66;
+    padding: 6px 10px;
+    top: 10px;
+    left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    color: #1e8f3a;
+    cursor: pointer;
+}
+.btn-add {
+    border-radius: 20px;
+    border: 1px solid #c33;
+    padding: 6px 18px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.star-rating {
+    color: #f0c400;
+    font-size: 18px;
+}
+/*4*/
+.card-custom {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+.card-custom:hover {
+    transform: scale(1.02);
+}
+.discount-badge {
+    position: absolute;
+    background: #ccff66;
+    padding: 6px 10px;
+    top: 10px;
+    left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    color: #1e8f3a;
+    cursor: pointer;
+}
+.btn-add {
+    border-radius: 20px;
+    border: 1px solid #c33;
+    padding: 6px 18px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.star-rating {
+    color: #f0c400;
+    font-size: 18px;
+}
+
+
+
+/*9*/
+.footer-section {
+  background: #f39c12;
+  color: #000;
+  padding-top: 30px;
+}
+
+.footer-img {
+  width: 140px;
+  border-radius: 10px;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.icon-box i {
+  color: #000;
+}
+
+.footer-bottom {
+  background: #00000022;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+<!-- TOP NAV AREA -->
+<div class="container py-3">
+  <div class="d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <img src="f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" alt="logo" width="120">
+
+    <!-- Search Box -->
+    <div class="search-box mx-3 d-none d-md-flex">
+      <input type="text" placeholder="Search product category">
+      <i class="bi bi-search text-white fs-5"></i>
+    </div>
+
+    <!-- Icons -->
+    <div class="d-flex align-items-center">
+      <img src="Frame 30485.png" width="45" height="45" class="rounded-circle">
+
+      <i class="bi bi-heart icon-btn"></i>
+      <i class="bi bi-cart3 icon-btn"></i>
+      <i class="bi bi-bell icon-btn"></i>
+    </div>
+
+  </div>
+</div>
+
+<!-- MENU BAR -->
+<div class="container text-center border-top pt-3 pb-2 menu-area">
+  <a href="Home.html">Home</a>
+  <a href="Shopping.html">Shopping</a>
+  <a href="Categories.html">Categories</a>
+  <a href="Blogs.html">Blogs</a>
+  <a href="Contact us.html">Contact us</a>
+  <a href="About us">About us</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<br><br><br>
+<div class="container">
+    <div class="row g-4">
+
+        <!-- CARD 1 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="banana.png" class="card-img-top" alt="Banana">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Fruits</h6>
+                    <p class="mb-1">Banana</p>
+                    <p class="text-muted small">500g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$14</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="choc.png" class="card-img-top" alt="Chocolate Box">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Snacks & Sweets</h6>
+                    <p class="mb-1">Box of Chocolate</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$234</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="redd.png" class="card-img-top" alt="Onion">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Vegetable</h6>
+                    <p class="mb-1">Red Onion</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$114</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="kk.png" class="card-img-top" alt="Green Apple">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Fruit</h6>
+                    <p class="mb-1">Fresh Green Apple</p>
+                    <p class="text-muted small">250g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$320</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><br><br><br>
+
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Product 5 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="Borges-Extra-Light-Olive-Oil.png" class="card-img-top" alt="Olive Oil">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Olive oil</p>
+                    <p class="text-muted small">500l</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$450</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="Bhagyalakshmi-Ragi-Flour.png" class="card-img-top" alt="Ragi Flour">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Ragi Flour</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$234</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="Gold-Winner-Refined-Sunflower-Oil-Jar.png" class="card-img-top" alt="Gold Winner">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Gold winner</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$114</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="Bhagyalakshmi-Ragi-Flour.png" class="card-img-top" alt="Ragi Flour">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Ragi Flour</p>
+                    <p class="text-muted small">250g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$320</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><br><br><br>
+
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Product 9 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="29" class="card-img-top" alt="Olive Oil">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Olive oil</p>
+                    <p class="text-muted small">500l</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$450</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 10 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="Double-Horse-Puttupodi-White.png" class="card-img-top" alt="Ragi Flour">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Ragi Flour</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$234</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 11 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="3" class="card-img-top" alt="Gold Winner">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Gold winner</p>
+                    <p class="text-muted small">750g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$114</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 12 -->
+        <div class="col-md-3">
+            <div class="card card-custom">
+                <div class="position-relative">
+                    <span class="discount-badge">20% off</span>
+                    <i class="bi bi-heart wishlist-icon"></i>
+                    <img src="6" class="card-img-top" alt="Ragi Flour">
+                </div>
+                <div class="card-body">
+                    <h6 class="text-success">Grocery</h6>
+                    <p class="mb-1">Ragi Flour</p>
+                    <p class="text-muted small">250g</p>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <strong>$320</strong>
+                        <span class="star-rating"><i class="bi bi-star-fill"></i> 4.5</span>
+                    </div>
+
+                    <button class="btn btn-add mt-2">Add <i class="bi bi-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="footer-section">
+  <div class="container-fluid p-4">
+    <div class="row align-items-start">
+
+      <!-- Left image -->
+      <div class="col-md-2 text-center">
+        <img src="1eac1217-55f9-47c9-b7c1-fb018280bd68 1.png" class="footer-img" alt="lady shopping">
+      </div>
+
+      <!-- Logo + Social icons -->
+      <div class="col-md-3">
+        <img src="f06d4fb4-1a3e-4229-b142-3185452f8a6a-removebg-preview 1.png" class="mb-3" width="130">
+
+        <h5 class="mb-2">Follow Us On :</h5>
+
+        <div class="d-flex gap-3">
+          <div class="icon-box"><i class="fab fa-facebook-f"></i></div>
+          <div class="icon-box"><i class="fab fa-instagram"></i></div>
+          <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div class="col-md-2">
+        <h6 class="footer-title">company</h6>
+        <p>About us</p>
+        <p>Blog</p>
+        <p>Contact us</p>
+        <p>Career</p>
+      </div>
+
+      <!-- Customer service -->
+      <div class="col-md-2">
+        <h6 class="footer-title">Customer service</h6>
+        <p>My Account</p>
+        <p>Track your order</p>
+        <p>Return</p>
+        <p>FAQ</p>
+      </div>
+
+      <!-- Info -->
+      <div class="col-md-2">
+        <h6 class="footer-title">Our information</h6>
+        <p>Privacy</p>
+        <p>User terms & Conditions</p>
+        <p>Return Policy</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-1">
+        <h6 class="footer-title">Contact info</h6>
+        <p>123-456-789</p>
+        <p>example@gmail.com</p>
+        <p>72, north street</p>
+        <p>Mumbai-001</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom text-center py-2">
+    © 2025 My market. All rights reserved.<br>
+    <a href="#">Terms & Conditions</a> | 
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>
